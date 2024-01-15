@@ -1,1 +1,40 @@
+// npm init/npm -y to initailize package.json
+// ls-list of files
+// node index.js runs the file
+// npm run start to run same file by changing script in package.json
+// npm install express to install express
+// bina nodemon ke baar baar restart karna padhta h 
+//gitignore is folder to ignore files which dont need to get deployed on github
 
+
+// Production-
+//npm i dotenv 
+
+
+
+console.log('coffee with satyam');
+
+
+
+
+require('dotenv').config()
+
+const express = require('express')
+const app = express()
+const port = 4000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.get('/twitter',(req,res)=>{
+    res.send('Anonymous rkhna pasand karunga')
+})
+
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`)
+// })
+
+app.listen(process.env.PORT,()=>{
+    console.log(`Example app listening on port ${port}`)
+})
